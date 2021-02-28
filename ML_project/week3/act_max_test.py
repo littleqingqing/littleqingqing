@@ -82,28 +82,24 @@ plt.savefig('network_activation.png')
 ##plt.show()
 plt.clf()
 
-for i in range(0,10,3):
+for i in range(0,4):
 
     x_synth = activation_maximisation(network, (0,i), 0.5)
     plt.hist2d(x_synth[:, 0], x_synth[:, 1], bins=25, range=((-1, 1), (-1,1)), cmap='inferno')
-    plt.savefig('layer_0_'+'neutron_'+str(i)+'_0.5.png')
+    plt.savefig('layer_0_'+'neutron_'+str(i+1)+'_0.5.png')
     ##plt.show()
     plt.clf()
 
     x_synth = activation_maximisation(network, (0,i), 2.5)
     plt.hist2d(x_synth[:, 0], x_synth[:, 1], bins=25, range=((-1, 1), (-1,1)), cmap='inferno')
-    plt.savefig('layer_0_'+'neutron_'+str(i)+'_2.5.png')
+    plt.savefig('layer_0_'+'neutron_'+str(i+1)+'_2.5.png')
     ##plt.show()
     plt.clf()
 
-x_synth = activation_maximisation(network, (1,0), 0.5)
-plt.hist2d(x_synth[:, 0], x_synth[:, 1], bins=25, range=((-1, 1), (-1,1)), cmap='inferno')
-plt.savefig('layer_1_neutron_0_0.5.png')
-##plt.show()
-plt.clf()
+for j in range(0,3):
 
-x_synth = activation_maximisation(network, (1,0), 1.0)
-plt.hist2d(x_synth[:, 0], x_synth[:, 1], bins=25, range=((-1, 1), (-1,1)), cmap='inferno')
-plt.savefig('layer_1_neutron_0_1.0.png')
-##plt.show()
-plt.clf()
+    x_synth = activation_maximisation(network, (1,0), j*0.5)
+    plt.hist2d(x_synth[:, 0], x_synth[:, 1], bins=25, range=((-1, 1), (-1,1)), cmap='inferno')
+    plt.savefig('layer_1_neutron_'+str(j*0.5)+'.png')
+    ##plt.show()
+    plt.clf()

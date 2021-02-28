@@ -24,7 +24,7 @@ x_test, y_test = generate_data(n_test)
 network = keras.models.Sequential()
 
 # **** Here, create and train the network using the keras api
-network.add(keras.layers.Dense(10,activation='relu' ,input_dim=2))
+network.add(keras.layers.Dense(4,activation='relu' ,input_dim=2))
 network.add(keras.layers.Dense(1,activation='tanh'))
 network.summary()
 network.compile(loss='mse',optimizer='sgd')
